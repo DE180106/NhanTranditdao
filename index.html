@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Birthday 🎂</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="script.js">
+</head>
+<body>
+  <!-- Pháo hoa nền -->
+  <canvas id="fireworks"></canvas>
+
+  <!-- Glow phủ nền -->
+  <div class="glow-overlay"></div>
+
+  <!-- MUSIC -->
+  <audio id="bgm" preload="auto">
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4c40e6a2ba.mp3?filename=happy-birthday-loop-113401.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- HUD hướng dẫn -->
+  <div class="hud">
+    <div class="hud-card">
+      <div class="hud-title">🎉 Mini Game Sinh Nhật 🎉</div>
+      <div class="hud-desc">
+        Bấm nổ hết quà sinh nhật đang bay trên màn hình<br/>
+        để mở thư tuyệt mật cho Nhân Trần 😏
+      </div>
+      <div class="hud-status">
+        Đã bấm: <span id="hit-count">0</span> / <span id="total-count">5</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LAYER chứa bong bóng/quà để click -->
+  <div id="targets-layer">
+    <!-- JS sẽ thêm các .target-bubble vào đây -->
+  </div>
+
+  <!-- Bao thư trung tâm (chỉ hiện sau khi win) -->
+  <div class="center-envelope-wrap hidden" id="center-envelope-wrap">
+    <div class="tap-hint">Bấm mở thư 💌</div>
+    <button class="center-envelope-btn" id="center-envelope-btn" aria-label="Open birthday letter">
+      <div class="envelope-big">
+        <div class="envelope-big-top"></div>
+        <div class="envelope-big-body"></div>
+        <div class="heart-seal-big"></div>
+      </div>
+    </button>
+  </div>
+
+  <!-- Popup thư chúc mừng -->
+  <div class="letter-overlay" id="letter-overlay">
+    <div class="letter-card">
+      <button class="letter-close" id="letter-close" aria-label="Close letter">✖</button>
+      <div class="letter-content">
+        <h2>💖 CHÚC MỪNG SINH NHẬT 💖</h2>
+        <p>
+          Chúc mừng sinh nhật Nhân Trần 🎂<br/>
+          Sớm sinh quý tử nhaaa 👶🔥<br/>
+          Happy Birth Day 💖
+        </p>
+        <small class="letter-note">
+          Hôm nay là ngày anh chính thức lên level mới:
+          đẹp trai hơn, giàu hơn, áp lực “làm ba” hơn 😌
+        </small>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
